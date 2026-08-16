@@ -15,7 +15,7 @@
     <div class="min-h-screen flex flex-col">
         <!-- TOP NAV -->
         <header class="h-16 border-b border-slate-800 flex items-center justify-between px-8 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
-            <div class="flex items-center gap-2 cursor-pointer group" onclick="showGallery()">
+            <div class="flex items-center gap-2 cursor-pointer group" data-action="show-gallery" onclick="showGallery()">
                 <div class="bg-indigo-500 p-2 rounded-lg group-hover:scale-110 transition-transform shadow-lg shadow-indigo-500/20">
                     <i data-lucide="gamepad-2" class="text-white w-5 h-5"></i>
                 </div>
@@ -97,6 +97,7 @@
                                 Enter the void and experience the highest fidelity unblocked gravity racing available on the network.
                             </p>
                             <button 
+                                data-action="launch-featured"
                                 onclick="launchFeatured()"
                                 class="bg-white text-slate-950 px-10 py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-indigo-400 hover:scale-105 transition-all flex items-center gap-3 shadow-xl shadow-white/5"
                             >
@@ -132,6 +133,7 @@
                             </div>
                             <p class="text-sm font-bold tracking-widest uppercase italic">Error::No_Matches_Found</p>
                             <button 
+                                data-action="reset-filters"
                                 onclick="resetFilters()"
                                 class="px-6 py-2 bg-slate-800 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] rounded-full hover:bg-slate-700 hover:text-white transition-all"
                             >
@@ -145,6 +147,7 @@
                 <div id="player-view" class="hidden h-full flex flex-col gap-4">
                     <div class="flex items-center justify-between bg-slate-900/60 p-4 rounded-2xl border border-slate-800">
                         <button 
+                            data-action="show-gallery"
                             onclick="showGallery()"
                             class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors group px-4 py-2 bg-slate-800 rounded-xl"
                         >
@@ -162,7 +165,7 @@
                                 <i data-lucide="external-link" class="w-4 h-4"></i>
                                 <span class="hidden sm:inline">Nueva Pestaña</span>
                             </button>
-                            <button onclick="toggleFullscreen()" class="p-2.5 bg-slate-800 border border-slate-700 rounded-xl hover:bg-slate-700 text-white transition-colors" title="Pantalla Completa">
+                            <button data-action="toggle-fullscreen" onclick="toggleFullscreen()" class="p-2.5 bg-slate-800 border border-slate-700 rounded-xl hover:bg-slate-700 text-white transition-colors" title="Pantalla Completa">
                                 <i data-lucide="maximize-2" class="w-5 h-5"></i>
                             </button>
                         </div>
@@ -177,7 +180,7 @@
                             <i data-lucide="info" class="w-4 h-4 text-indigo-400"></i>
                             <span>¿Problemas para jugar o pantalla negra? Haz clic en <strong>"Nueva Pestaña"</strong> arriba a la derecha.</span>
                         </span>
-                        <button onclick="reloadGame()" class="text-indigo-400 hover:text-indigo-300 font-semibold underline ml-2">
+                        <button data-action="reload-game" onclick="reloadGame()" class="text-indigo-400 hover:text-indigo-300 font-semibold underline ml-2">
                             Recargar juego
                         </button>
                     </div>
@@ -202,7 +205,7 @@
         </footer>
     </div>
 
-    <!-- SCRIPT -->
-    <script type="module" src="/script.js"></script>
+    <!-- ENTRY POINT SCRIPT -->
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>
