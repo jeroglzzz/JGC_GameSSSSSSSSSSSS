@@ -1,0 +1,8 @@
+{
+  "name": "Chapa67 games",
+  "description": "A clean, high-performance portal for browser games with iframe embedding and organized categories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
